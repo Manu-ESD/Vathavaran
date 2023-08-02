@@ -1,0 +1,72 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt" xmlns:f="sap.f" controllerName="weather.one.controller.App" height="1000px">
+	<!--<Page>-->
+	<!--    <customHeader>-->
+	<!--        <Toolbar>-->
+	<!--            <content>-->
+	<!--            	<ToolbarSpacer/>-->
+	<!--                <Button icon="sap-icon://weather-proofing"/>-->
+	<!--                <Label text="VATHAVARN - a weather app"/>-->
+	<!--                <ToolbarSpacer/>-->
+	<!--            </content>-->
+	<!--        </Toolbar>-->
+	<!--    </customHeader>-->
+	<!--</Page>-->
+	<App id="BackUI" backgroundImage="" backgroundOpacity="1" height="600px">
+	<ScrollContainer backgroundDesign="Transparent" vertical="true">
+		<tnt:ToolHeader id="shellLikeToolHeader" class="shellLikeToolHeader">
+			<ToolbarSpacer/>
+			<core:Icon src="sap-icon://weather-proofing" class="size2">
+				<!--<core:layoutData>-->
+				<!--	<FlexItemData growFactor="1"/>-->
+				<!--</core:layoutData>-->
+			</core:Icon>
+			<Title text="Vathavaran - A Weather App" wrapping="false" id="productName">
+				<layoutData>
+					<OverflowToolbarLayoutData priority="Disappear"/>
+				</layoutData>
+			</Title>
+			<ToolbarSpacer/>
+		</tnt:ToolHeader>
+		<content>
+		
+			<FlexBox justifyContent="Center" alignItems="Center">
+				<Label text="Enter City Name : " class="sapUiSmallMargin"/>
+				<Input id="City" placeholder="eg:Hyderabad" class="sapUiSmallMargin"/>
+				<Button type="Accept" id="Check" text="Check" class="sapUiSmallMargin" press="OnSubmit"/>
+			</FlexBox>
+			
+
+			
+			<FlexBox alignContent="Center" justifyContent="SpaceAround" class="sapUiMediumMargin">
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Temperature" subheader="in Celcius" press="press">
+					<TileContent>
+						<NumericContent id="tempUI" value="0" icon="sap-icon://temperature" withMargin="false"/>
+					</TileContent>
+				</GenericTile>
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Humidity" press="press">
+					<TileContent>
+						<NumericContent id="humidUI" value="0" icon="sap-icon://heating-cooling" withMargin="false"/>
+					</TileContent>
+				</GenericTile>
+				<GenericTile id="typeUI" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="pleasant" subheader="weather type" press="press" url="https://www.sap.com/">
+					<TileContent>
+						<ImageContent id="imgUI" src="https://cdn.weatherapi.com/weather/64x64/day/113.png"/>
+					</TileContent>
+				</GenericTile>
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Wind" subheader="in kmph" press="press">
+					<TileContent>
+						<NumericContent id="windUI" value="0" icon="sap-icon://line-charts" withMargin="false"/>
+					</TileContent>
+				</GenericTile>
+			</FlexBox>
+			
+			
+			<FlexBox alignContent="SpaceAround" alignItems="Center" justifyContent="SpaceAround">
+				<GenericTile id="timeUI" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Local TimeLine:" subheader="" press="press" frameType="TwoByHalf">
+					<TileContent/>
+				</GenericTile>
+			</FlexBox>
+		</content>
+	</ScrollContainer>
+	</App>
+</mvc:View>
